@@ -1,14 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const { airplaneRoutes } = require("./airplane-routes");
 
-router.get("/info", (req, res) => {
-    res.status(200).json({
-        success: true,
-        data: {},
-        error: {},
-    });
-});
-
+router.use("/airplane", airplaneRoutes);
 module.exports = {
     v1Routes: router,
 };
