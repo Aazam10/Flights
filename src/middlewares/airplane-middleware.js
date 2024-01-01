@@ -2,6 +2,7 @@ const { StatusCodes } = require("http-status-codes");
 const { ErrorResponse } = require("../utils/common");
 const { AppError } = require("../utils/error");
 function createRequestValidator(req, res, next) {
+    console.log("body", req.body);
     if (!req.body.modelNumber) {
         const error = new AppError(
             ["modelNumber cannot be null please check the required format"],
