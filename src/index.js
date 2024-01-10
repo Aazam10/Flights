@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", apiRoutes);
 
-app.listen(ServerConfig.PORT, () => {
+app.listen(ServerConfig.PORT, async () => {
     console.log(
         `Successfully started listening on port and made change ${ServerConfig.PORT}`
     );

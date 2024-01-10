@@ -1,10 +1,13 @@
 const { StatusCodes } = require("http-status-codes");
-const { ErrorResponse } = require("../utils/common");
 const { AppError } = require("../utils/error");
+const { ErrorResponse } = require("../utils/common");
+
 function validateCreateRequest(req, res, next) {
-    if (!req.body.modelNumber) {
+    if (!req.body.name) {
         const error = new AppError(
-            ["modelNumber cannot be null please check the required format"],
+            [
+                "name cannot be null when creating city please check the required format",
+            ],
             StatusCodes.BAD_REQUEST
         );
         return res.status(StatusCodes.BAD_REQUEST).json({
